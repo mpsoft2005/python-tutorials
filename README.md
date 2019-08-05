@@ -39,3 +39,24 @@ str.encode(s)
 # bytes to str
 bytes.decode(data)
 ```
+
+# 计算CPU使用率
+```Python
+cpu_stat_dict = {}
+cpu_stat_line = "400%cpu  97%user   0%nice  88%sys 200%idle   0%iow  13%irq   3%sirq   0%host"
+
+for usage_item in cpu_stat_line.split():
+	usage,item = usage_item.split('%')
+	cpu_stat_dict[item] = float(usage)
+
+total = cpu_stat_dict['cpu']
+idle = cpu_stat_dict['idle']
+
+total_cpu_usage = (total - idle) / total
+print("CPU Loading: {:.2%}".format(total_cpu_usage))
+```
+
+Output
+```
+CPU Loading: 50.00%
+```
