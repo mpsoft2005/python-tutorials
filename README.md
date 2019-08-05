@@ -41,6 +41,8 @@ bytes.decode(data)
 ```
 
 # 计算CPU使用率
+
+Caculate CPU Loading
 ```Python
 cpu_stat_dict = {}
 cpu_stat_line = "400%cpu  97%user   0%nice  88%sys 200%idle   0%iow  13%irq   3%sirq   0%host"
